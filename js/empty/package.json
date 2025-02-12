@@ -1,0 +1,29 @@
+{
+  "name": "package-name",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@gravity-ui/eslint-config": "^3.3.0",
+    "@gravity-ui/prettier-config": "^1.1.0",
+    "@gravity-ui/tsconfig": "^1.0.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.1.7",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.2.5"
+  },
+  "nano-staged": {
+    "*.{js,ts}": [
+      "eslint --fix --quiet"
+    ],
+    "*.{md,mdx}": [
+      "prettier --write"
+    ]
+  }
+}
